@@ -1,7 +1,7 @@
 <launch>
         <param name="use_sim_time" value="false" />
 	<arg name="map_file" default="MAPA_APOGEU.yaml"/>
-        <include file="$(find gain_raspi)/launch/move_base.launch" />
+        <include file="$(find gain_raspi)/launch/movebase.launch" />
         <include file="$(find amcl)/examples/amcl_diff.launch" />
         <include file="$(find sweep_ros)/launch/sweep2scan.launch" />
         <include file="$(find robot_setup_tf)/launch/transformadas.launch" />
