@@ -1,0 +1,16 @@
+#planner_frequency: 3
+#recovery_behavior_enabled: true
+
+TrajectoryPlannerROS:
+  max_vel_x: 0.4
+  min_vel_x: 0.05
+  max_vel_theta: 0.4
+  min_vel_theta: -0.4
+  min_in_place_vel_theta: 0.2
+  acc_lim_theta: 0.2
+  acc_lim_x: 1
+  acc_lim_y: 1
+  meter_scoring: true
+  yaw_goal_tolerance: 0.15
+  xy_goal_tolerance: 0.2
+  holonomic_robot: false

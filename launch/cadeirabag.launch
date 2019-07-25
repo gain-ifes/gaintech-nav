@@ -3,7 +3,7 @@
 
 	<arg name="map_file" default="MAPA_APOGEU.yaml"/>
 
-        <!--include file="$(find gain_raspi)/launch/move_base.launch" /-->
+        <include file="$(find gain_raspi)/launch/move_base.launch" />
 
         <include file="$(find amcl)/examples/amcl_diff.launch" />
 
