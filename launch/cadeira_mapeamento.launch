@@ -1,0 +1,8 @@
+<launch>
+
+	<param name="use_sim_time" value="false" />
+
+	<include file="$(find robot_setup_tf)/launch/transformadas.launch" />
+
+	<include file="$(find sweep_ros)/launch/sweep2scan.launch" />
+</launch>
