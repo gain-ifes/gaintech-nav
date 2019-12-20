@@ -1,3 +1,3 @@
-# gain_raspi
+# gaintech-nav
 
-Pacote a ser instalado na Raspberry PI para executar o amcl, move_base, leitura do Lidar, publicação do mapa, tf, etc.
+Pacote a ser instalado no sistema embarcado para executar o amcl, move_base, leitura do Lidar, publica o do mapa, tf, etc.
