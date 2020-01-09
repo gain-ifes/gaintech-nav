@@ -1,12 +1,17 @@
 <launch>
         <param name="use_sim_time" value="false" />
-	<!-- <arg name="map_file" default="MAPA_APOGEU.yaml"/> -->
+	<arg name="map_file" default="MAPA_APOGEU.yaml"/>
+
         <!-- <include file="$(find gaintech-nav)/launch/movebase.launch" /> -->
-        <!-- <include file="$(find amcl)/examples/amcl_diff.launch" /> -->
+
+        <include file="$(find amcl)/examples/amcl_diff.launch" />
+        <!-- <include file="$(find gaintech-nav)/launch/sockets-myrio.launch" /> -->
+
         <include file="$(find sick_scan)/launch/sick_tim_5xx.launch" >
             <arg name="hostname" value="192.168.1.102" />
             <arg name="frame_id" value="laser_frame" />
         </include>
         <include file="$(find robot-setup-tf)/launch/transformadas.launch" />
-        <!-- <node pkg= "map_server" type="map_server" name="mapa" args="$(find gain_raspi)/maps/$(arg map_file)"/> -->
+
+        <node pkg= "map_server" type="map_server" name="mapa" args="$(find gaintech-nav)/maps/$(arg map_file)"/>
 </launch>

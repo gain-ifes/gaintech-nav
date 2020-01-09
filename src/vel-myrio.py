@@ -10,7 +10,7 @@ from geometry_msgs.msg import Twist
 porta = 3001
 ipmyrio = '192.168.1.100'
 looprate = 50
-nomedotopico = 'vel'
+nomedotopico = '/vel'
 vel_ros = Twist()
 
 

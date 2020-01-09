@@ -1,0 +1,8 @@
+<launch>
+    <group ns="myrio">
+        <!-- <node pkg= "gaintech-nav" type="cmd_vel-myrio.py" name="cmd_vel" output="screen" /> -->
+        <node pkg= "gaintech-nav" type="pose-myrio.py" name="pose" output="screen" />
+        <node pkg= "gaintech-nav" type="vel-myrio.py" name="vel" output="screen" />
+        <node pkg= "gaintech-nav" type="reset_odom.py" name="reset_odom" output="screen" />
+    </group>
+</launch>

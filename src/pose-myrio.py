@@ -10,7 +10,7 @@ from geometry_msgs.msg import Pose
 porta = 3000
 ipmyrio = '192.168.1.100'
 looprate = 50
-nomedotopico = 'pose'
+nomedotopico = '/pose'
 pose_ros = Pose()
 
 

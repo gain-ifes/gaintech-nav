@@ -10,7 +10,7 @@ from geometry_msgs.msg import Twist
 porta = 3002
 ipmyrio = '192.168.1.100'
 looprate = 50
-nomedotopico = 'cmd_vel'
+nomedotopico = '/cmd_vel'
 cmd_vel_ros = Twist()
 
 def callback(data):
@@ -33,4 +33,3 @@ while not rospy.is_shutdown():
     dado_json = ros2json(cmd_vel_ros)
     client.sendall(struct.pack('>i', len(dado_json))+dado_json)
     rate.sleep()
-    cmd_vel_ros.linear.y = cmd_vel_ros.linear.y + 0.1
