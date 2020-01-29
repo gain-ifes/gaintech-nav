@@ -14,22 +14,25 @@ nomedotopico = '/cmd_vel'
 cmd_vel_ros = Twist()
 
 def callback(data):
-    cmd_vel_ros = data.data
+    global cmd_vel_ros
+    cmd_vel_ros = data
 
-cmd_vel_ros.linear.z = 50
+try:
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_address = (ipmyrio, porta)
+    client.connect(server_address)
 
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_address = (ipmyrio, porta)
-client.connect(server_address)
+    rospy.init_node('myrio_cmd_vel', anonymous=False)
+    rospy.loginfo("Conectado ao myRIO (%s) na porta %d",ipmyrio, porta)
 
-rospy.init_node('myrio_cmd_vel', anonymous=False)
-rospy.loginfo("Conectado ao myRIO (%s) na porta %d",ipmyrio, porta)
+    sub = rospy.Subscriber(nomedotopico, Twist, callback)
+    rate = rospy.Rate(looprate) # Hz
+    rospy.loginfo("Inscrito no topico /%s ...", nomedotopico)
 
-sub = rospy.Subscriber(nomedotopico, Twist, callback)
-rate = rospy.Rate(looprate) # Hz
-rospy.loginfo("Inscrito no topico /%s ...", nomedotopico)
+    while not rospy.is_shutdown():
+        dado_json = ros2json(cmd_vel_ros)
+        client.sendall(struct.pack('>i', len(dado_json))+dado_json)
+        rate.sleep()
 
-while not rospy.is_shutdown():
-    dado_json = ros2json(cmd_vel_ros)
-    client.sendall(struct.pack('>i', len(dado_json))+dado_json)
-    rate.sleep()
+except (KeyboardInterrupt,SystemExit,socket.error):
+    client.close()

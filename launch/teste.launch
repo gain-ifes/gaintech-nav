@@ -2,10 +2,11 @@
         <param name="use_sim_time" value="false" />
 	<arg name="map_file" default="MAPA_APOGEU.yaml"/>
 
-        <!-- <include file="$(find gaintech-nav)/launch/movebase.launch" /> -->
+        <!-- <include file="$(find gaintech-nav)/launch/old/move_base.launch" /> -->
 
         <include file="$(find amcl)/examples/amcl_diff.launch" />
-        <!-- <include file="$(find gaintech-nav)/launch/sockets-myrio.launch" /> -->
+
+        <include file="$(find gaintech-nav)/launch/sockets-myrio.launch" />
 
         <include file="$(find sick_scan)/launch/sick_tim_5xx.launch" >
             <arg name="hostname" value="192.168.1.102" />

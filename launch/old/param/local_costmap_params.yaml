@@ -1,6 +1,6 @@
 local_costmap:
-  update_frequency: 3.0
-  publish_frequency: 1.5
+  update_frequency: 10.0
+  publish_frequency: 5.0
   transform_tolerance: 0.3
   static_map: false
   rolling_window: true
@@ -15,7 +15,7 @@ local_costmap:
     topic: /scan,
     sensor_frame: laser_frame,
     data_type: LaserScan, 
-    expected_update_rate: 0.4,
+    expected_update_rate: 15,
     observation_persistence: 0.0, 
     marking: true, 
     clearing: true, 

@@ -2,10 +2,10 @@
 
   <node pkg="move_base" type="move_base" name="move_base" output="screen">
     <param name="controller_frequency" value="8.0"/>
-    <rosparam file="$(find gain_raspi)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find gain_raspi)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find gain_raspi)/param/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find gain_raspi)/param/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find gain_raspi)/param/trajectory_planner.yaml" command="load" />
+    <rosparam file="$(find gaintech-nav)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find gaintech-nav)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find gaintech-nav)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find gaintech-nav)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find gaintech-nav)/param/trajectory_planner.yaml" command="load" />
   </node>
 </launch>
