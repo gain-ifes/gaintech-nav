@@ -1,9 +1,0 @@
-<launch>
-	
-	<node pkg= "robot_setup_tf"      type="tf_odom"     name="tf_odom"  />
-
-	<node pkg= "robot_setup_tf"      type="tf_laser"     name="tf_laser"  />
-
-	<include file="$(find sweep_ros)/launch/view_sweep_laser_scan.launch"   />
- 
-</launch>
