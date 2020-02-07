@@ -5,9 +5,9 @@ use_dijkstra: true                     # (bool, default: true) If true, use dijk
 use_quadratic: true                    # (bool, default: true) If true, use the quadratic approximation of the potential. Otherwise, use a simpler calculation.
 use_grid_path: false                   # (bool, default: false) If true, create a path that follows the grid boundaries. Otherwise, use a gradient descent method.
 old_navfn_behavior: false              # (bool, default: false) If for some reason, you want global_planner to exactly mirror the behavior of navfn, set this to true (and use the defaults for the other boolean parameters)
-lethal_cost: 253                       # (int, default: 253) Lethal Cost (dynamic reconfigure)
-neutral_cost: 50                       # (int, default: 50) Neutral Cost (dynamic reconfigure)
-cost_factor: 5.0                       # (double, default: 3.) Factor to multiply each cost from costmap by (dynamic reconfigure)
+lethal_cost: 250                       # (int, default: 253) Lethal Cost (dynamic reconfigure)
+neutral_cost: 55                       # (int, default: 50) Neutral Cost (dynamic reconfigure)
+cost_factor: 0.55                       # (double, default: 3.) Factor to multiply each cost from costmap by (dynamic reconfigure)
 publish_potential: true                # (bool, default: True) Publish Potential Costmap (dynamic reconfigure)
 orientation_mode: 0                    # (int, default: 0) How to set the orientation of each point (None=0, Forward=1, Interpolate=2, ForwardThenInterpolate=3, Backward=4, Leftward=5, Rightward=6) (dynamic reconfigure)
 orientation_window_size: 1             # (int, default: 1) What window to use to determine the orientation based on the position derivative specified by the orientation mode (dynamic reconfigure)
