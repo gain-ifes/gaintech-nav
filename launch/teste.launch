@@ -15,5 +15,22 @@
 
         <include file="$(find gaintech-nav)/launch/amcl_node.launch" />
         <!-- <include file="$(find amcl)/examples/amcl_diff.launch" /> -->
+<!-- 
+        <node pkg="trajectory_server" type="trajectory_server" name="trajectory_server_amcl" output="screen">
+                <param name="published_topic_name" value="trajectory_amcl"/>
+                <param name="fixed_frame_name" value="map"/>
+                <param name="target_frame_name" value="map"/>
+                <param name="source_frame_name" value="base_link"/>
+                <param name="trajectory_update_rate" value="4.0" />
+                <param name="trajectory_publish_rate" value="1.0"/>
+        </node>
         
+        <node pkg="trajectory_server" type="trajectory_server" name="trajectory_server_odom" output="screen">
+                <param name="published_topic_name" value="trajectory_odom"/>
+                <param name="fixed_frame_name" value="odom"/>
+                <param name="target_frame_name" value="map"/>
+                <param name="source_frame_name" value="base_link"/>
+                <param name="trajectory_update_rate" value="4.0" />
+                <param name="trajectory_publish_rate" value="1.0"/>
+        </node> -->
 </launch>
